@@ -37,13 +37,27 @@ lspconfig.tsserver.setup {
 }
 lspconfig.marksman.setup{
   on_attach=on_attach,
-  filetypes= {"markdown", "markdown.mdx"},
+  filetypes= {"markdown", "markdown.mdx", "markdown.md"},
   cmd={ "marksman", "server" },
 }
 lspconfig.tailwindcss.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+   	filetypes = {"aspnetcorerazor, astro, astro-markdown, blade, clojure, django-html, htmldjango, edge, eelixir, elixir, ejs, erb, eruby, gohtml, gohtmltmpl, haml, handlebars, hbs, html, html-eex, heex, jade, leaf, liquid, mdx, mustache, njk, nunjucks, php, razor, slim, twig, css, less, postcss, sass, scss, stylus, sugarss, javascript, javascriptreact, reason, rescript, typescript, typescriptreact, vue, svelte"}
+
 }
+lspconfig.astro.setup {
+  init_options = {
+    configuration = {},
+    on_attach = on_attach,
+    capabilities = capabilities,
+    typescript = { serverPath = vim.fs.normalize '~/.nvm/versions/node/v19.9.0/lib/node_modules/typescript/lib/tsserverlibrary.js', },
+
+  },
+}
+
+
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
