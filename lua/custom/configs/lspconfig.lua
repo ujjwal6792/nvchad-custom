@@ -43,7 +43,7 @@ lspconfig.marksman.setup{
 lspconfig.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-   	filetypes = {"aspnetcorerazor, astro, astro-markdown, blade, clojure, django-html, htmldjango, edge, eelixir, elixir, ejs, erb, eruby, gohtml, gohtmltmpl, haml, handlebars, hbs, html, html-eex, heex, jade, leaf, liquid, mdx, mustache, njk, nunjucks, php, razor, slim, twig, css, less, postcss, sass, scss, stylus, sugarss, javascript, javascriptreact, reason, rescript, typescript, typescriptreact, vue, svelte"}
+  -- filetypes = {" astro, astro-markdown, html, html-eex, mdx, css, less, postcss, sass, scss, javascript, javascriptreact, typescript, typescriptreact, svelte"}
 
 }
 lspconfig.astro.setup {
