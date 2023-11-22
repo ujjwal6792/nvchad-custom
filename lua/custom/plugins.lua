@@ -112,6 +112,15 @@ local plugins = {
         })
     end,
   },
+    { "nvim-lua/plenary.nvim", lazy = true },
+    {
+        "kdheepak/lazygit.nvim",
+         lazy= false,
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
   -- rust plugins
   {
     "rust-lang/rust.vim",
@@ -213,7 +222,6 @@ local plugins = {
   --   "NvChad/nvim-colorizer.lua",
   --   enabled = false
   -- },
-
-}
+  }
 
 return plugins

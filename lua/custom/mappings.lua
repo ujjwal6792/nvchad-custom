@@ -10,7 +10,8 @@ M.general = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<C-d>"] = { "Find Under", "description for Find Under" },
     ["<leader>fp"] = { "<cmd> ProjectMgr<CR>", "Open Projects"},
-    ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>" },
+    ["<leader>gg"] = { "<cmd> :LazyGit<CR>", "open lazygit" },
+    ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "debugger toggle breakpoints" },
     ["<leader>dus"] = {
       function ()
         local widgets = require('dap.ui.widgets');
