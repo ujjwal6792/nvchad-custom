@@ -66,6 +66,9 @@ M.mason = {
     "eslint_d",
     -- rust stuff
     "rust-analyzer",
+    -- go stuff 
+    "gopls",
+    "golangci-lint",
     -- c/cpp stuff
     "clangd",
     "clang-format",
