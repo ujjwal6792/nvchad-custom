@@ -10,7 +10,7 @@ M.general = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<C-d>"] = { "Find Under", "description for Find Under" },
     ["<leader>fp"] = { "<cmd> ProjectMgr<CR>", "Open Projects"},
-    ["gg"] = { "<cmd> :LazyGit<CR>", "open lazygit" },
+    ["gt"] = { "<cmd> :LazyGit<CR>", "open lazygit" },
     ["<leader>gf"] = { "<cmd> :LazyGitFilter<CR>", "lazygit commits" },
     ["gG"] = { "<cmd> :LazyGitCurrentFile<CR>", "open lazygit for current" },
     ["<leader>gF"] = { "<cmd> :LazyGitFilter<CR>", "lazygit commits for current" },

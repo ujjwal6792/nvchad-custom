@@ -56,6 +56,49 @@ lspconfig.astro.setup {
   },
 }
 
+lspconfig.golangci_lint_ls.setup{
+  on_attach = on_attach,
+  cmd={"golangci-lint-langserver"},
+  filetypes = { "go", "gomod" },
+  init_options ={
+  command = { "golangci-lint", "run", "--out-format", "json" }
+}
+}
+
+lspconfig.gopls.setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
+      flags = {
+         debounce_text_changes = 150,
+      },
+      settings = {
+         gopls = {
+            gofumpt = true,
+            experimentalPostfixCompletions = true,
+            staticcheck = true,
+            usePlaceholders = true,
+         },
+      },
+   }
+
+-- if not lspconfig.golangcilsp then
+--       local configs = require "lspconfig/configs"
+--
+--       configs.golangcilsp = {
+--          default_config = {
+--             cmd = { "golangci-lint-langserver" },
+--             root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
+--             init_options = {
+--                command = { "golangci-lint", "run", "--out-format", "json" },
+--             },
+--          },
+--       }
+--    end
+
+-- lspconfig.golangcilsp.setup {
+      -- filetypes = { "go" },
+   -- }
 
 
 for _, lsp in ipairs(servers) do
