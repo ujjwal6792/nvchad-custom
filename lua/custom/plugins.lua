@@ -57,7 +57,7 @@ local plugins = {
     opts = overrides.mason
   },
   {
-      'JoosepAlviste/nvim-ts-context-commentstring',
+    'JoosepAlviste/nvim-ts-context-commentstring',
   },
   {
     "nvim-treesitter/nvim-treesitter",
