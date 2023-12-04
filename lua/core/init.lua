@@ -17,6 +17,7 @@ opt.cursorline = true
 
 -- Indenting
 opt.expandtab = true
+opt.autoindent = true
 opt.shiftwidth = 2
 opt.smartindent = true
 opt.tabstop = 2
@@ -28,6 +29,7 @@ opt.smartcase = true
 opt.mouse = "a"
 
 -- Numbers
+opt.relativenumber = true
 opt.number = true
 opt.numberwidth = 2
 opt.ruler = false
@@ -41,13 +43,15 @@ opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
 opt.undofile = true
-
+opt.swapfile = false
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 150
 
+opt.iskeyword:append("-") -- makes neovim read - as part of the word
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
+opt.backspace = "indent,eol,start"
 
 g.mapleader = " "
 
