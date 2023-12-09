@@ -17,9 +17,9 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-vim.diagnostic.config({
+vim.diagnostic.config {
   virtual_text = {
-    prefix = '●'
+    prefix = "●",
   },
   signs = true,
   underline = true,
@@ -27,60 +27,60 @@ vim.diagnostic.config({
   float = {
     source = "always", -- Or "if_many"
   },
-})
+}
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "javascript", "typescript", "typescriptreact","javascriptreact","javascript.jsx", "typescript.tsx" },
+  filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact", "javascript.jsx", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
-  capabilities = capabilities
+  capabilities = capabilities,
 }
-lspconfig.marksman.setup{
-  on_attach=on_attach,
-  filetypes= {"markdown", "markdown.mdx", "markdown.md"},
-  cmd={ "marksman", "server" },
+lspconfig.marksman.setup {
+  on_attach = on_attach,
+  filetypes = { "markdown", "markdown.mdx", "markdown.md" },
+  cmd = { "marksman", "server" },
 }
 lspconfig.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   -- filetypes = {" astro, astro-markdown, html, html-eex, mdx, css, less, postcss, sass, scss, javascript, javascriptreact, typescript, typescriptreact, svelte"}
-
 }
 lspconfig.astro.setup {
   init_options = {
     configuration = {},
     on_attach = on_attach,
     capabilities = capabilities,
-    typescript = { serverPath = vim.fs.normalize '~/.nvm/versions/node/v19.9.0/lib/node_modules/typescript/lib/tsserverlibrary.js', },
-
+    typescript = {
+      serverPath = vim.fs.normalize "~/.nvm/versions/node/v19.9.0/lib/node_modules/typescript/lib/tsserverlibrary.js",
+    },
   },
 }
 
-lspconfig.golangci_lint_ls.setup{
+lspconfig.gopls.setup {
   on_attach = on_attach,
-  cmd={"golangci-lint-langserver"},
-  filetypes = { "go", "gomod" },
-  init_options ={
-  command = { "golangci-lint", "run", "--out-format", "json" }
-}
+  capabilities = capabilities,
+  root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
+  flags = {
+    debounce_text_changes = 150,
+  },
+  settings = {
+    gopls = {
+      gofumpt = true,
+      experimentalPostfixCompletions = true,
+      staticcheck = true,
+      usePlaceholders = true,
+    },
+  },
 }
 
-lspconfig.gopls.setup {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
-      flags = {
-         debounce_text_changes = 150,
-      },
-      settings = {
-         gopls = {
-            gofumpt = true,
-            experimentalPostfixCompletions = true,
-            staticcheck = true,
-            usePlaceholders = true,
-         },
-      },
-   }
+-- lspconfig.golangci_lint_ls.setup {
+--   on_attach = on_attach,
+--   cmd = { "golangci-lint-langserver" },
+--   filetypes = { "go", "gomod", "gosum", "gowork" },
+--   init_options = {
+--     command = { "golangci-lint", "run", "--out-format", "json" },
+--   },
+-- }
 
 -- if not lspconfig.golangcilsp then
 --       local configs = require "lspconfig/configs"
@@ -97,9 +97,8 @@ lspconfig.gopls.setup {
 --    end
 
 -- lspconfig.golangcilsp.setup {
-      -- filetypes = { "go" },
-   -- }
-
+-- filetypes = { "go" },
+-- }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -108,5 +107,5 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
+--
 -- lspconfig.pyright.setup { blabla}

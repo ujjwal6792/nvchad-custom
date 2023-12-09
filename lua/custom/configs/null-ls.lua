@@ -21,6 +21,7 @@ null_ls.setup {
   sources = {
     formatting.prettierd,
     formatting.stylua, -- lua formatter
+    formatting.gofumpt,
     diagnostics.eslint_d.with { -- js/ts linter
       diagnostics_format = "[eslint] #{m}\n(#{c})",
       condition = function(utils)

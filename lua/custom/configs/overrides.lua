@@ -2,8 +2,8 @@ local M = {}
 
 M.cmp = {
   sources = {
-    name = "crates"
-  }
+    name = "crates",
+  },
 }
 
 M.treesitter = {
@@ -17,7 +17,9 @@ M.treesitter = {
     "css",
     "javascript",
     "typescript",
-     "tsx",
+    "tsx",
+    "go",
+    "gofumpt",
     "c",
     "rust",
     "markdown",
@@ -32,6 +34,7 @@ M.treesitter = {
     enable_rename = true,
     enable_close = true,
     enable_close_on_slash = true,
+    close_on_exit = true,
   },
   indent = {
     enable = true,
@@ -66,7 +69,7 @@ M.mason = {
     "eslint_d",
     -- rust stuff
     "rust-analyzer",
-    -- go stuff 
+    -- go stuff
     "gopls",
     "golangci-lint",
     -- c/cpp stuff
@@ -76,12 +79,12 @@ M.mason = {
 }
 
 M.nvterm = {
-terminals = {
+  terminals = {
     shell = vim.o.shell,
     list = {},
     type_opts = {
       float = {
-        relative = 'editor',
+        relative = "editor",
         row = 0.05,
         col = 0.05,
         width = 0.9,
@@ -89,9 +92,9 @@ terminals = {
         border = "double",
         location = "center",
       },
-      horizontal = { location = "rightbelow", split_ratio = .5, },
-      vertical = { location = "rightbelow", split_ratio = .7 },
-    }
+      horizontal = { location = "rightbelow", split_ratio = 0.5 },
+      vertical = { location = "rightbelow", split_ratio = 0.7 },
+    },
   },
   behavior = {
     autoclose_on_quit = {
@@ -118,7 +121,5 @@ M.nvimtree = {
     },
   },
 }
-
-
 
 return M
