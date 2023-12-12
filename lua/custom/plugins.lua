@@ -259,6 +259,18 @@ local plugins = {
       -- configurations go here
     },
   },
+  {
+    "ellisonleao/glow.nvim",
+    ft = { "markdown", "mdx", "md" },
+    config = function()
+      require("glow").setup {
+        style = "dark",
+        width = 120,
+      }
+    end,
+    cmd = "Glow",
+    keys = { { "<leader>mm", "<cmd>Glow<cr>", desc = "Preview markdown" } },
+  },
 }
 
 return plugins
