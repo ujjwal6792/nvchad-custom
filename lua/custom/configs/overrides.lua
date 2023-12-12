@@ -19,7 +19,7 @@ M.treesitter = {
     "typescript",
     "tsx",
     "go",
-    "gofumpt",
+    -- "gofumpt",
     "c",
     "rust",
     "markdown",
