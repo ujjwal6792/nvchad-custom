@@ -17,16 +17,19 @@ local formatting_style = {
   format = function(_, item)
     local icons = require "nvchad.icons.lspkind"
     local icon = (cmp_ui.icons and icons[item.kind]) or ""
-
+    local tailwind_colorized = require("tailwindcss-colorizer-cmp").formatter(_, item)
     if cmp_style == "atom" or cmp_style == "atom_colored" then
       icon = " " .. icon .. " "
       item.menu = cmp_ui.lspkind_text and "   (" .. item.kind .. ")" or ""
       item.kind = icon
+    elseif tailwind_colorized.kind == "XX" then
+      item.kind = " 󰉦 "
+      cmp_ui.kind_hl_group = tailwind_colorized.kind_hl_group
+      item.menu = ("  %s"):format "ᴛᴡ  ᴄᴏʟᴏʀ"
     else
       icon = cmp_ui.lspkind_text and (" " .. icon .. " ") or icon
       item.kind = string.format("%s %s", icon, cmp_ui.lspkind_text and item.kind or "")
     end
-
     return item
   end,
 }
