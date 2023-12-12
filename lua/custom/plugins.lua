@@ -223,38 +223,13 @@ local plugins = {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = { { "<leader>tt", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble Lsp screen" } },
   },
-  -- {"ellisonleao/glow.nvim",
-  -- config = true,
-  -- config = function() require("glow").setup() end,
-  -- cmd = "Glow"},
-  -- {
-  --    "iamcco/markdown-preview.nvim",
-  --    build = "cd app && npm install",
-  --    ft = "markdown",
-  --    lazy = true,
-  --    init = function() vim.g.mkdp_filetypes = { "markdown", "md" } end,
-  --    keys = { { "gm", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview" } },
-  --    config = function()
-  --      vim.g.mkdp_auto_close = false
-  --      vim.g.mkdp_open_to_the_world = false
-  --      vim.g.mkdp_open_ip = "127.0.0.1"
-  --      vim.g.mkdp_port = "8888"
-  --      vim.g.mkdp_browser = "firefox"
-  --      vim.g.mkdp_echo_preview_url = true
-  --      vim.g.mkdp_page_title = "${name}"
-  --    end,
-  --  },
-
-  -- {
-  --     'lukas-reineke/headlines.nvim',
-  --     dependencies = "nvim-treesitter/nvim-treesitter",
-  --     config = true, -- or `opts = {}`
-  -- }
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  {
+    "karb94/neoscroll.nvim",
+    lazy = false,
+    config = function()
+      require("neoscroll").setup {}
+    end,
+  },
 }
 
 return plugins

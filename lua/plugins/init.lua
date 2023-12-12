@@ -206,9 +206,9 @@ local default_plugins = {
     init = function()
       require("core.utils").load_mappings "comment"
     end,
-    config = function(_, opts)
-      require("Comment").setup{
-        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+    config = function(_)
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
       }
     end,
   },
