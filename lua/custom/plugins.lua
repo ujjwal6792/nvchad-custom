@@ -217,7 +217,12 @@ local plugins = {
       }
     end,
   },
-
+  {
+    "folke/trouble.nvim",
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = { { "<leader>tt", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble Lsp screen" } },
+  },
   -- {"ellisonleao/glow.nvim",
   -- config = true,
   -- config = function() require("glow").setup() end,
