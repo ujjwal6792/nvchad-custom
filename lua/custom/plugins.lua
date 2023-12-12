@@ -241,6 +241,11 @@ local plugins = {
       }
     end,
   },
+  {
+    "stevearc/dressing.nvim",
+    lazy = false,
+    opts = {},
+  },
 }
 
 return plugins
