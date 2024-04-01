@@ -29,7 +29,7 @@ opt.smartcase = true
 opt.mouse = "a"
 
 -- Numbers
-opt.relativenumber = true
+-- opt.relativenumber = true
 opt.number = true
 opt.numberwidth = 2
 opt.ruler = false
@@ -47,7 +47,7 @@ opt.swapfile = false
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 150
 
-opt.iskeyword:append("-") -- makes neovim read - as part of the word
+opt.iskeyword:append "-" -- makes neovim read - as part of the word
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
